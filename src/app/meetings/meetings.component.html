@@ -1,0 +1,197 @@
+<button data-toggle="modal" data-target="#staticBackdrop" (click)="add_meeting()" style="
+color: white;
+background-color: #029eb1;margin-left: 450px;margin-top:20px;" type="button" class="btn btn-outline-primary"><i class="bi bi-clipboard-plus" style="color: white;">  </i>  Ajouter Client  </button>
+
+<!-- pop up test -->
+
+
+<!-- end pop up test -->
+
+<div class="content">
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title ">List Of Clients : &nbsp;  &nbsp; &nbsp;  <input  (keyup)="search_client($event.target.value)" id="in_search" placeholder="search client ...." /> </h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class=" text-primary">
+                    
+                    <th>
+                      nom 
+                    </th>
+                    <th>
+                      Addresse
+                    </th>
+                    <th>
+                       email 
+                    </th>
+                    
+                    <th>
+                        Action
+                    </th>
+                   
+                  </thead>
+                  <tbody>
+
+                    <tr *ngFor="let client of clients">      
+                      <td>
+                        {{ client.nom }} 
+                      </td>
+                      <td>
+                        {{ client.addresse }}
+                      </td>
+                      <td>
+                        {{ client.email }}
+                      </td>
+                      
+                      <td class="text-primary">
+                        <button data-toggle="modal" data-target="#staticBackdrop2"  (click)="update_client_by_id(client.id)"  type="button" class="btn btn-default btn-sm">
+                          <span class="glyphicon glyphicon-remove"></span> update 
+                        </button>
+                        <button (click)="delete_client_byid(client.id)" type="button" class="btn btn-default btn-sm">
+                          <span class="glyphicon glyphicon-remove"></span> remove 
+                        </button>
+
+                      </td>
+                    </tr>
+
+
+                  
+                 
+                  
+                   
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        
+      </div>
+
+
+    </div>
+
+
+
+  </div>
+
+
+  
+  
+  
+<!-- pop up start -->
+
+
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+              <div class="text-right"> <i class="fa fa-close close" data-dismiss="modal"></i> </div>
+                  
+                  <div id="login-row" class="row justify-content-center align-items-center">
+                      <div id="login-column" class="col-md-6">
+                          <div id="login-box" class="col-md-12">
+                              <form #f="ngForm" id="login-form" class="form" method="post">
+                                  <h3 class="text-center text-info">Ajouter un client</h3>
+                                  <br>
+                                  <div class="form-group">
+                                      <label for="nom" class="text-info">Nom :</label><br>
+                                      <input #nom="ngModel" ngModel required type="text" name="nom" id="nom" class="form-control">
+                                  </div>
+        
+                                  <div class="form-group">
+                                    <label for="address" class="text-info">Addresse :</label><br>
+                                    <input #addresse="ngModel" ngModel required type="text" name="addresse" id="addresse" class="form-control">
+                                </div>
+        
+                                  <div class="form-group">
+                                      <label for="email" class="text-info">Email :</label><br>
+                                      <input #email="ngModel" ngModel required type="email" name="email" id="email" class="form-control">
+                                  </div>
+        
+        
+        
+                                  <div class="form-group">
+                                      <input (click)="add_client(f)" data-dismiss="modal"  id="btn_sub" type="submit" name="submit" class="btn btn-info btn-md" value="add client"> &nbsp;   &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  
+                                    
+                                  </div>
+          
+                                  
+                              </form>
+                             
+          
+                              <!-- end add meeting form -->
+        
+                          </div>
+                      </div>
+                  </div>
+              
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- pop up update client -->
+
+
+
+<div class="modal fade" id="staticBackdrop2" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-body">
+            <div class="text-right"> <i class="fa fa-close close" data-dismiss="modal"></i> </div>
+                
+                <div id="login-row" class="row justify-content-center align-items-center">
+                    <div id="login-column" class="col-md-6">
+                        <div id="login-box" class="col-md-12">
+                            <form #f1="ngForm" id="login-form" class="form" method="post">
+                                <h3 class="text-center text-info">Modifier un client</h3>
+                                <br>
+                                <div class="form-group">
+                                    <label for="nom" class="text-info">Nom :</label><br>
+                                    <input #nom="ngModel" ngModel required type="text" name="nom" id="nom" class="form-control" value={{client_nom}}>
+                                </div>
+      
+                                <div class="form-group">
+                                  <label for="address" class="text-info">Addresse :</label><br>
+                                  <input #addresse="ngModel" ngModel required type="text" name="addresse" id="addresse" class="form-control" value="{{client_addresse}}">
+                              </div>
+      
+                                <div class="form-group">
+                                    <label for="email" class="text-info">Email :</label><br>
+                                    <input #email="ngModel" ngModel required type="email" name="email" id="email" class="form-control" value="{{ client_email }}" >
+                                </div>
+      
+      
+      
+                                <div class="form-group">
+                                    <input (click)="modifier_client(client_id,f1)" data-dismiss="modal"  id="btn_sub" type="submit" name="submit" class="btn btn-info btn-md" value="modifier client"> &nbsp;   &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  
+                                  
+                                </div>
+        
+                                
+                            </form>
+                           
+        
+                            <!-- end add meeting form -->
+      
+                        </div>
+                    </div>
+                </div>
+            
+                  
+              </div>
+          </div>
+      </div>
+  </div>

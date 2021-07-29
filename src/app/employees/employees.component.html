@@ -1,0 +1,92 @@
+
+<select  id="select_client_tag" (change)="select_client($event.target.value)">
+    <option value="">choose client</option>
+
+    <option name="nom_client" *ngFor="let client of clients" value="{{client.nom}}"> {{ client.nom }} </option>
+
+  </select>
+
+<div class="container mt-5 mb-3" id="container_facture">
+  <div class="row d-flex justify-content-center">
+      <div class="col-md-8">
+          <div class="card" style="background-color: white;">
+              <div class="d-flex flex-row p-2"> <img src="https://i.imgur.com/vzlPPh3.png" width="48">
+                  <div class="d-flex flex-column"> <span class="font-weight-bold">Tax Invoice</span> <small>INV-001</small> </div>
+              </div>
+              <hr>
+              <div class="table-responsive p-2">
+                  <table class="table table-borderless">
+                      <tbody>
+                          <tr class="add">
+                              <td>To</td>
+                              <td>From</td>
+                          </tr>
+                          <tr class="content">
+                              <td class="font-weight-bold">{{nom_client}} <br>Attn: {{nom_client}} <br>Tunisie</td>
+                              <td class="font-weight-bold">Sotuiaa <br> Responsable rh <br> Bizerte - Tunisie </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+              <hr>
+              <div class="products p-2">
+                  <table class="table table-borderless">
+                      <tbody>
+                          <tr class="add">
+
+                              <td>Quantite</td>
+                              <td>Designation</td>
+                              <td>Prix unitaire</td>
+                              <td>Prix totale</td>
+                              <td>Prix totale + 20% TVA </td>
+                            
+                          </tr>
+                          <tr *ngFor="let f of facture_data" class="content">
+                              <td>{{ f.quantite }}</td>
+                              <td>{{ f.designation }}</td>
+                              <td>{{ f.prix_unitaire + " DT " }} </td>
+                              <td>{{ f.prix_totale + " DT "}}</td>
+                              <td>{{ f.prix_totale_tva + " DT " }} </td>
+                          </tr>
+                         
+                      </tbody>
+                  </table>
+              </div>
+              <hr>
+              <div class="products p-2">
+                  <table class="table table-borderless">
+                      <tbody>
+                          <tr class="add">
+                              <td></td>
+                              <td>TVA </td>
+                              <td class="text-center">Total</td>
+                          </tr>
+                          <tr class="content">
+                              <td></td>
+                              <td>20%</td>
+                              <td class="text-center">{{ somme_totale + " DT " }}</td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+              <hr>
+              <div class="address p-2">
+                  <table class="table table-borderless">
+                      <tbody>
+                          <tr class="add">
+                              <td>Bank Details</td>
+                          </tr>
+                          <tr class="content">
+                              <td> Bank Name : ADS BANK <br> Swift Code : ADS1234Q <br> Account Holder : Jelly Pepper <br> Account Number : 5454542WQR <br> </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- onclick="myFunction()" -->
+
+<button id="download_pdf" type="button" class="btn btn-outline-primary" onclick="myFunction()"  (click)="btn_facure_mail()"> envoyé a {{nom_client}} </button>

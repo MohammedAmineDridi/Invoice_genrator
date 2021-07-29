@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "GestionRH"
+    }
+  },
+  "defaultProject": "GestionRH",
+  "cli": {
+    "analytics": false
+  }
 }

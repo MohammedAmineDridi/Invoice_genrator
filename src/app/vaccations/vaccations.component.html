@@ -1,0 +1,319 @@
+<div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title ">Employees Vaccations Review : &nbsp;  &nbsp; &nbsp;  <input id="in_search" placeholder="search employee ...." /> </h4>
+
+            </div>
+
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class=" text-primary">
+                    
+                    <th>
+                      First Name
+                    </th>
+                    <th>
+                      Last Name
+                    </th>
+                    <th>
+                      Hiring date
+                    </th>
+                    <th>
+                        Days of vacation
+                    </th>
+                    <th>
+                        consumed days of vacation
+                    </th>
+                    <th>
+                        remaining days of vacation
+                    </th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                     
+                      <td>
+                        Amine
+                      </td>
+                      <td>
+                        Dridi
+                      </td>
+                      <td>
+                        2020-15-26
+                      </td>
+                      <td>
+                        30 
+                      </td>
+                      <td>
+                        8
+                      </td>
+                      <td>
+                        22
+                      </td>
+                    </tr>
+
+
+                    <tr>
+                      <td>
+                        2
+                      </td>
+                      <td>
+                        Minerva Hooper
+                      </td>
+                      <td>
+                        Curaçao
+                      </td>
+                      <td>
+                        Sinaai-Waas
+                      </td>
+                      <td class="text-primary">
+                        $23,789
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        3
+                      </td>
+                      <td>
+                        Sage Rodriguez
+                      </td>
+                      <td>
+                        Netherlands
+                      </td>
+                      <td>
+                        Baileux
+                      </td>
+                      <td class="text-primary">
+                        $56,142
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        4
+                      </td>
+                      <td>
+                        Philip Chaney
+                      </td>
+                      <td>
+                        Korea, South
+                      </td>
+                      <td>
+                        Overland Park
+                      </td>
+                      <td class="text-primary">
+                        $38,735
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        5
+                      </td>
+                      <td>
+                        Doris Greene
+                      </td>
+                      <td>
+                        Malawi
+                      </td>
+                      <td>
+                        Feldkirchen in Kärnten
+                      </td>
+                      <td class="text-primary">
+                        $63,542
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        6
+                      </td>
+                      <td>
+                        Mason Porter
+                      </td>
+                      <td>
+                        Chile
+                      </td>
+                      <td>
+                        Gloucester
+                      </td>
+                      <td class="text-primary">
+                        $78,615
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="card" id="header_vaccations">
+    <div class="card-header card-header-primary">
+      <h4 class="card-title ">List Of Vaccation Requests :  </h4>
+      </div>
+      </div>
+
+
+
+  <!-- part 2 : vacation requests from employees -->
+
+  <div class="container bootstrap snippets bootdeys">
+  <div class="row">
+      <div class="col-md-4 col-sm-6 content-card">
+         
+
+          <div class="card-big-shadow">
+              <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
+
+
+            <div class="card-header">
+              <ul id="filter" class="nav nav-pills card-header-pills">
+                <li class="nav-item ">
+                  <a  id="accept" #in1 (mouseenter)="test_active(in1.id)" (mouseleave)="leave()" class="{{ class_accept }}" href="#">Accept</a>
+                </li>
+                &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li class="nav-item">
+                    <a  id="reject" #in2 (mouseenter)="test_active(in2.id)"  (mouseleave)="leave()" class="{{class_reject}}" href="#">Reject</a>
+                  </li>
+                  
+              </ul>
+            </div>
+        
+
+
+                  <div class="content">
+                      <img src="../../assets/template/img/faces/card-profile1-square.jpg" alt="user" width="100" height="100" >
+                      <br>
+                      <h6 class="category"></h6>
+                      <h4 class="title"><a href="#">Amine dridi</a></h4>
+                      <div >
+                      <h4 class="description"> Period : 10 days </h4>
+                      <h4 class="description"> reason : i'm sick </h4>
+                      <h4 class="description"> start date : 2020-07-10 </h4>
+                      <h4 class="description"> end date : 202-07-15 </h4>
+                    </div>
+                  </div>
+              </div> <!-- end card -->
+          </div>
+      </div>
+      
+      <!-- card 2 :-->
+
+      <div class="col-md-4 col-sm-6 content-card">
+          
+        <div class="card-big-shadow">
+            <div class="card card-just-text" data-background="color" data-color="green" data-radius="none">
+                <div class="content">
+                    <img src="../../assets/template/img/faces/card-profile1-square.jpg" alt="user" width="100" height="100" >
+                    <br>
+                    <h6 class="category"></h6>
+                    <h4 class="title"><a href="#">Amine dridi</a></h4>
+                    <div >
+                    <h4 class="description"> Period : 10 days </h4>
+                    <h4 class="description"> reason : i'm sick </h4>
+                    <h4 class="description"> start date : 2020-07-10 </h4>
+                    <h4 class="description"> end date : 202-07-15 </h4>
+                  </div>
+                </div>
+            </div> <!-- end card -->
+        </div>
+    </div>
+      
+      <!-- card 3 -->
+
+      <div class="col-md-4 col-sm-6 content-card">
+          
+        <div class="card-big-shadow">
+            <div class="card card-just-text" data-background="color" data-color="yellow" data-radius="none">
+                <div class="content">
+                    <img src="../../assets/template/img/faces/card-profile1-square.jpg" alt="user" width="100" height="100" >
+                    <br>
+                    <h6 class="category"></h6>
+                    <h4 class="title"><a href="#">Amine dridi</a></h4>
+                    <div >
+                    <h4 class="description"> Period : 10 days </h4>
+                    <h4 class="description"> reason : i'm sick </h4>
+                    <h4 class="description"> start date : 2020-07-10 </h4>
+                    <h4 class="description"> end date : 202-07-15 </h4>
+                  </div>
+                </div>
+            </div> <!-- end card -->
+        </div>
+    </div>
+      
+     <!-- end card -->
+     <div class="col-md-4 col-sm-6 content-card">
+          
+        <div class="card-big-shadow">
+            <div class="card card-just-text" data-background="color" data-color="brown" data-radius="none">
+                <div class="content">
+                    <img src="../../assets/template/img/faces/card-profile1-square.jpg" alt="user" width="100" height="100" >
+                    <br>
+                    <h6 class="category"></h6>
+                    <h4 class="title"><a href="#">Amine dridi</a></h4>
+                    <div >
+                    <h4 class="description"> Period : 10 days </h4>
+                    <h4 class="description"> reason : i'm sick </h4>
+                    <h4 class="description"> start date : 2020-07-10 </h4>
+                    <h4 class="description"> end date : 202-07-15 </h4>
+                  </div>
+                </div>
+            </div> <!-- end card -->
+        </div>
+    </div>
+      
+      <!-- end card  -->
+
+      <div class="col-md-4 col-sm-6 content-card">
+          
+        <div class="card-big-shadow">
+            <div class="card card-just-text" data-background="color" data-color="purple" data-radius="none">
+                <div class="content">
+                    <img src="../../assets/template/img/faces/card-profile1-square.jpg" alt="user" width="100" height="100" >
+                    <br>
+                    <h6 class="category"></h6>
+                    <h4 class="title"><a href="#">Amine dridi</a></h4>
+                    <div >
+                    <h4 class="description"> Period : 10 days </h4>
+                    <h4 class="description"> reason : i'm sick </h4>
+                    <h4 class="description"> start date : 2020-07-10 </h4>
+                    <h4 class="description"> end date : 202-07-15 </h4>
+                  </div>
+                </div>
+            </div> <!-- end card -->
+        </div>
+    </div>
+      
+    
+    <div class="col-md-4 col-sm-6 content-card">
+          
+        <div class="card-big-shadow">
+            <div class="card card-just-text" data-background="color" data-color="orange" data-radius="none">
+                <div class="content">
+                    <img src="../../assets/template/img/faces/card-profile1-square.jpg" alt="user" width="100" height="100" >
+                    <br>
+                    <h6 class="category"></h6>
+                    <h4 class="title"><a href="#">Amine dridi</a></h4>
+                    <div >
+                    <h4 class="description"> Period : 10 days </h4>
+                    <h4 class="description"> reason : i'm sick </h4>
+                    <h4 class="description"> start date : 2020-07-10 </h4>
+                    <h4 class="description"> end date : 202-07-15 </h4>
+                  </div>
+                </div>
+            </div> <!-- end card -->
+        </div>
+    </div>
+
+
+  </div>
+  </div>

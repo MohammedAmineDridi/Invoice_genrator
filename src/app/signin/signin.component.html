@@ -1,0 +1,56 @@
+
+<div id="login">
+
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form #f="ngForm" id="login-form" class="form" action="" method="post">
+                        <h3 class="text-center text-info">Sign In</h3>
+                        <div class="form-group">
+                            <label for="username" class="text-info">First Name :</label><br>
+                            <input #first_name="ngModel" ngModel required type="text" name="first_name" id="firstname" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password" class="text-info">Last Name :</label><br>
+                            <input #last_name="ngModel" ngModel required type="text" name="last_name" id="lastname" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="text-info">Email :</label><br>
+                            <input #email="ngModel" ngModel required type="email" name="email" id="email" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="text-info">Phone :</label><br>
+                            <input #phone="ngModel" ngModel required type="number" name="phone" id="phone" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="text-info">Password :</label><br>
+                            <input #password="ngModel" ngModel required type="password" name="password" id="password" class="form-control">
+                        </div>
+
+                        
+                            <label for="password" class="text-info">Photo :</label><br>
+                            <input type="file"  #photo="ngModel" ngModel required name="photo" id="photo">
+                        
+
+
+                        <div class="form-group">
+                            <input (click)="btn_sign_click(f)" routerLink="/login" id="btn_sub" type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                        </div>
+
+                        
+                    </form>
+                   
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,38 @@
+
+<div id="login">
+
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form #f="ngForm" id="login-form" class="form" method="post">
+                        <h3 class="text-center text-info">Login</h3>
+                        <div class="form-group">
+                            <label for="username" class="text-info">Email :</label><br>
+                            <input #email="ngModel" type="email" name="email" id="email" class="form-control" ngModel required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="text-info">Password :</label><br>
+                            <input #password="ngModel" type="password" name="password" id="password" class="form-control" ngModel required>
+                        </div>
+                        <div class="form-group">
+                            <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                            <input (click)="login_btn_function(f)" id="btn_sub" type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                        </div>
+
+                        
+                    </form>
+                    
+                    <div id="register-link" class="text-right">
+                        <a routerLink="/signin" class="text-info">Register here</a>
+     
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

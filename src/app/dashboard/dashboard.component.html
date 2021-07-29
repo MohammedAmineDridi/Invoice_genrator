@@ -1,0 +1,99 @@
+<!--
+<button id="download_pdf" onclick="myFunction()"> test pdf </button>
+
+<p id="test_pdf"> hello from amine to pdf : quantite = </p>
+
+-->
+
+<div class="row">
+ 
+  <div class="col-6">
+    
+
+    <div id="login">
+      <div class="container">
+          <div id="login-row" class="row justify-content-center align-items-center">
+              <div id="login-column" class="col-md-6">
+                  <div id="login-box" class="col-md-12">
+                      <form #f="ngForm" id="login-form" class="form" method="post">
+                          <h3 class="text-center text-info">Facture</h3>
+                          <div class="form-group">
+                              <label for="quantite" class="text-info">Quantite :</label><br>
+                              <input (keyup)="onEnter_quantite(f,$event)"  #quantite="ngModel" type="number" name="quantite" id="quantite" class="form-control" ngModel required>
+                          </div>
+
+                          <div class="form-group">
+                              <label for="designation" class="text-info">Designation :</label><br>
+                              <input (keyup)="onEnter_designation($event)"  #designation="ngModel" type="text" name="designation" id="designation" class="form-control" ngModel required>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="prix_unitaire" class="text-info">Prix unitaire :</label><br>
+                            <input (keyup)="onEnter_prix_unitaire(f,$event)"  #prix_unitaire="ngModel" type="number" name="prix_unitaire" id="prix_unitaire" class="form-control" ngModel required>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="prix_totale" class="text-info">Prix totale :</label><br>
+                          <input #prix_totale="ngModel" type="text" name="prix_totale" id="prix_totale" class="form-control" ngModel required readonly >
+                      </div>
+
+                      <!-- choose client -->
+                      <div class="form-group">
+                        <select  (change)="select_client($event.target.value)">
+                          <option value="">choose client</option>
+
+                          <option name="nom_client" *ngFor="let client of clients" value="{{client.nom}}"> {{ client.nom }} </option>
+
+                          
+
+                        </select>
+                      
+                  </div>
+                      <!-- end choose client -->
+
+                      <div class="form-group">
+                              
+                        <input (click)="add_product(f)" id="btn_add_product" type="submit" name="submit" class="btn btn-info btn-md" value="ajouter le produit">
+                    </div>
+
+  
+                          
+                      </form>
+                     
+  
+  
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+
+
+  </div>
+
+  <div class="col-6">
+
+    <editor [(ngModel)]="text_facture" style="height: 1500px;width:520px;margin-right: 100px;margin-top: 7px;"
+    initialValue="<p>Initial content of the editor</p>"
+    [init]="{
+      height: 660,
+      menubar: false,
+      plugins: [
+        'advlist autolink lists link image charmap print',
+        'preview anchor searchreplace visualblocks code',
+        'fullscreen insertdatetime media table paste',
+        'help wordcount'
+      ],
+      toolbar:
+        'undo redo | formatselect | bold italic | \
+        alignleft aligncenter alignright alignjustify | \
+        bullist numlist outdent indent | help'
+    }"
+  >
+  </editor>
+  </div>
+
+
+</div>
+
